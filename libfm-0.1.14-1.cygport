@@ -1,0 +1,14 @@
+inherit gnome2
+
+DESCRIPTION="Lightweight GTK+ file manager library"
+HOMEPAGE="http://pcmanfm.sourceforge.net/"
+SRC_URI="mirror://sourceforge/pcmanfm/${P}.tar.gz"
+PATCH_URI="0.1.14-vpath.patch"
+
+PKG_NAMES="libfm0 libfm-common libfm-devel"
+libfm0_CONTENTS="usr/bin/*-0.dll usr/bin/*.exe"
+libfm_common_CONTENTS="--exclude=gtk-doc etc/ usr/lib/libfm/ usr/share/"
+libfm_devel_CONTENTS="usr/include/ usr/lib/lib*.* usr/lib/pkgconfig/ usr/share/gtk-doc/"
+
+# not compatible with glib >= 2.27
+MAKEOPTS+=" giomodules_LTLIBRARIES= "
