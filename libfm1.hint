@@ -1,5 +1,5 @@
 category: X11
-requires: libfm-common libcairo2 libgdk_pixbuf2.0_0 libglib2.0_0 libintl8 libmenu-cache1 libpango1.0_0
+requires: libfm-common libcairo2 libgdk_pixbuf2.0_0 libglib2.0_0 libgtk2.0_0 libintl8 libmenu-cache1 libpango1.0_0
 external-source: libfm
 sdesc: "LXDE file manager library (runtime)"
 ldesc: "File manager library used by LXDE's file manager (PCManFM)"

@@ -1,0 +1,5 @@
+category: X11
+requires: libfm1 libglib2.0_0 libgtk2.0_0 libintl8 libmenu-cache1
+external-source: libfm
+sdesc: "LXDE preferred application control panel"
+ldesc: "File manager library used by LXDE's file manager (PCManFM)"
