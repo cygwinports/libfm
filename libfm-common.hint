@@ -1,5 +1,0 @@
-category: X11
-requires: libglib2.0_0
-external-source: libfm
-sdesc: "LXDE file manager library (data)"
-ldesc: "File manager library used by LXDE's file manager (PCManFM)"

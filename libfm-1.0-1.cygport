@@ -1,13 +1,16 @@
 inherit gnome2
 
-DESCRIPTION="Lightweight GTK+ file manager library"
+CATEGORY="X11"
+SUMMARY="Lightweight GTK+ file manager library"
+DESCRIPTION="File manager library used by LXDE's file manager (PCManFM)"
 HOMEPAGE="http://pcmanfm.sourceforge.net/"
 SRC_URI="mirror://sourceforge/pcmanfm/${P}.tar.gz"
 
-PATCH_URI="0.1.14-vpath.patch"
+PATCH_URI="01-vpath.patch"
 
-PKG_NAMES="libfm1 libfm-bin libfm-common libfm-devel"
-libfm1_CONTENTS="usr/bin/*-1.dll"
+PKG_NAMES="libfm3 libfm-bin libfm-common libfm-devel"
+libfm3_REQUIRES="libfm-common"
+libfm3_CONTENTS="usr/bin/*-3.dll"
 libfm_bin_CONTENTS="usr/bin/*.exe usr/share/applications/"
 libfm_common_CONTENTS="--exclude=applications --exclude=gtk-doc etc/ usr/share/"
 libfm_devel_CONTENTS="usr/include/ usr/lib/lib*.* usr/lib/pkgconfig/ usr/share/gtk-doc/"

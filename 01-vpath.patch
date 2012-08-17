@@ -1,0 +1,34 @@
+--- a/src/Makefile.am	2012-08-12 10:49:46.000000000 -0500
++++ b/src/Makefile.am	2012-08-17 00:11:51.469481600 -0500
+@@ -222,11 +222,11 @@ libfm_la_CFLAGS = \
+ 	$(NULL)
+ 
+ libfm_la_LIBADD = \
++	actions/libfmactions.la \
+ 	$(GIO_LIBS) \
+ 	$(MENU_CACHE_LIBS) \
+ 	$(DBUS_LIBS) \
+ 	$(INTLLIBS) \
+-	$(srcdir)/actions/libfmactions.la \
+ 	$(NULL)
+ 
+ libfm_la_LDFLAGS = \
+--- a/src/tests/Makefile.am	2010-09-24 10:48:13.000000000 -0500
++++ b/src/tests/Makefile.am	2011-01-20 22:08:31.722198400 -0600
+@@ -3,11 +3,11 @@ include $(top_srcdir)/Makefile.decl
+ NULL=
+ 
+ AM_CPPFLAGS = \
+-	-I../ \
+-	-I../base \
+-	-I../actions \
+-	-I../job \
+-	-I../gtk \
++	-I$(top_srcdir)/src \
++	-I$(top_srcdir)/src/base \
++	-I$(top_srcdir)/src/actions \
++	-I$(top_srcdir)/src/job \
++	-I$(top_srcdir)/src/gtk \
+ 	$(GIO_CFLAGS) \
+ 	$(MENU_CACHE_CFLAGS) \
+ 	$(DBUS_CFLAGS) \
