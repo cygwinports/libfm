@@ -1,5 +1,8 @@
 inherit gnome2
 
+NAME="libfm"
+VERSION=1.0.1
+RELEASE=1
 CATEGORY="X11"
 SUMMARY="Lightweight GTK+ file manager library"
 DESCRIPTION="File manager library used by LXDE's file manager (PCManFM)"
