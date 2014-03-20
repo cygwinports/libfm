@@ -15,7 +15,7 @@ PATCH_URI="
 "
 
 PKG_NAMES="libfm3 libfm-bin libfm-common libfm-devel"
-libfm3_REQUIRES="libfm-common"
+libfm3_REQUIRES="gvfs libfm-common"
 libfm3_CONTENTS="usr/bin/*-3.dll"
 libfm_bin_CONTENTS="usr/bin/*.exe usr/share/applications/"
 libfm_common_CONTENTS="--exclude=applications --exclude=gtk-doc etc/ usr/share/"
