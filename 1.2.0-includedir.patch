@@ -1,0 +1,29 @@
+This creates an (ultimately empty) pkgincludedir, which throws off
+the symlink created in install-data-local.
+
+--- origsrc/libfm-1.2.0/src/Makefile.am	2014-02-08 06:41:40.000000000 -0600
++++ src/libfm-1.2.0/src/Makefile.am	2014-06-08 20:31:35.819582700 -0500
+@@ -154,9 +154,7 @@ libfm_gtk_SOURCES = \
+ 	gtk/fm-thumbnail.c \
+ 	$(NULL)
+ 
+-if EXTRALIB_ONLY
+-pkginclude_HEADERS = $(LIBFM_EXTRA_INCLUDES)
+-else
++if !EXTRALIB_ONLY
+ libfmincludedir = $(includedir)/@PACKAGE@-@FMLIBVER@
+ libfminclude_HEADERS = \
+ 	fm.h \
+@@ -229,12 +227,6 @@ libfmgtkinclude_HEADERS = \
+ 	gtk/fm-tab-label.h \
+ 	gtk/fm-thumbnail.h \
+ 	$(NULL)
+-
+-pkginclude_HEADERS = \
+-	$(LIBFM_INCLUDES) \
+-	$(LIBFM_EXTRA_INCLUDES) \
+-	$(LIBFM_GTK_INCLUDES) \
+-	$(NULL)
+ endif
+ 
+ libfmextraincludedir = $(includedir)/@PACKAGE@-@FMLIBVER@

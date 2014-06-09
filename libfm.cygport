@@ -1,22 +1,28 @@
 inherit gnome2
 
 NAME="libfm"
-VERSION=1.1.1
+VERSION=1.2.0
 RELEASE=1
-CATEGORY="X11"
+CATEGORY="Libs"
 SUMMARY="Lightweight GTK+ file manager library"
 DESCRIPTION="File manager library used by LXDE's file manager (PCManFM)"
 HOMEPAGE="http://pcmanfm.sourceforge.net/"
-SRC_URI="mirror://sourceforge/pcmanfm/libfm-${VERSION}.tar.gz"
+SRC_URI="mirror://sourceforge/pcmanfm/libfm-${VERSION}.tar.xz"
 PATCH_URI="
-	01-vpath.patch
-	02-exeext.patch
-	03-includedir.patch
+	1.2.0-exeext.patch
+	1.2.0-includedir.patch
+	1.2.0-vpath.patch
+	1.2.0-cygwin-modules.patch
 "
 
-PKG_NAMES="libfm3 libfm-bin libfm-common libfm-devel"
-libfm3_REQUIRES="gvfs libfm-common"
-libfm3_CONTENTS="usr/bin/*-3.dll"
+PKG_NAMES="libfm4 libfm-bin libfm-common libfm-devel libfm-doc libfm-gtk4 libfm-gtk-devel"
+libfm4_REQUIRES="gvfs libfm-common"
+libfm4_CONTENTS="usr/bin/cygfm-4.dll usr/bin/cygfm-extra-4.dll"
 libfm_bin_CONTENTS="usr/bin/*.exe usr/share/applications/"
 libfm_common_CONTENTS="--exclude=applications --exclude=gtk-doc etc/ usr/share/"
-libfm_devel_CONTENTS="usr/include/ usr/lib/lib*.* usr/lib/pkgconfig/ usr/share/gtk-doc/"
+libfm_devel_CONTENTS="--exclude=*-gtk* usr/include/ usr/lib/lib*.* usr/lib/pkgconfig/"
+libfm_doc_CATEGORY="Doc"
+libfm_doc_CONTENTS="usr/share/gtk-doc/"
+libfm_gtk4_CONTENTS="usr/bin/cygfm-gtk-4.dll usr/lib/libfm/modules/"
+libfm_gtk_devel_CONTENTS="usr/include/libfm-*/fm-gtk* usr/lib/libfm-gtk.* usr/lib/pkgconfig/libfm-gtk.pc"
+PKG_IGNORE="usr/lib/pkgconfig/libfm-gtk3.pc"

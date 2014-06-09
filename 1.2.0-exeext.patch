@@ -1,0 +1,11 @@
+--- origsrc/libfm-1.2.0/configure.ac	2014-02-18 18:05:14.000000000 -0600
++++ src/libfm-1.2.0/configure.ac	2014-06-08 20:30:20.880296400 -0500
+@@ -124,7 +124,7 @@ if test x"$ac_with_gtk" != xno; then
+       ;;
+   esac
+   PKG_CHECK_MODULES(GTK, [$pkg_modules])
+-  LIBFM_PREF_APPS="libfm-pref-apps lxshortcut"
++  LIBFM_PREF_APPS="libfm-pref-apps\$(EXEEXT) lxshortcut\$(EXEEXT)"
+ else
+   dnl automake uses GTK_CFLAGS for glib-compat.c compilation
+   GTK_CFLAGS="${GIO_CFLAGS}"
