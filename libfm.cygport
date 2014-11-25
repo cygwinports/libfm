@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="libfm"
-VERSION=1.2.0
+VERSION=1.2.3
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Lightweight GTK+ file manager library"
@@ -10,7 +10,6 @@ HOMEPAGE="http://pcmanfm.sourceforge.net/"
 SRC_URI="mirror://sourceforge/pcmanfm/libfm-${VERSION}.tar.xz"
 PATCH_URI="
 	1.2.0-exeext.patch
-	1.2.0-includedir.patch
 	1.2.0-vpath.patch
 	1.2.0-cygwin-modules.patch
 "
@@ -18,11 +17,12 @@ PATCH_URI="
 PKG_NAMES="libfm4 libfm-bin libfm-common libfm-devel libfm-doc libfm-gtk4 libfm-gtk-devel"
 libfm4_REQUIRES="gvfs libfm-common"
 libfm4_CONTENTS="usr/bin/cygfm-4.dll usr/bin/cygfm-extra-4.dll"
+libfm_bin_OBSOLETES="lxshortcut"
 libfm_bin_CONTENTS="usr/bin/*.exe usr/share/applications/"
 libfm_common_CONTENTS="--exclude=applications --exclude=gtk-doc etc/ usr/share/"
 libfm_devel_CONTENTS="--exclude=*-gtk* usr/include/ usr/lib/lib*.* usr/lib/pkgconfig/"
 libfm_doc_CATEGORY="Doc"
 libfm_doc_CONTENTS="usr/share/gtk-doc/"
-libfm_gtk4_CONTENTS="usr/bin/cygfm-gtk-4.dll usr/lib/libfm/modules/"
+libfm_gtk4_CONTENTS="usr/bin/cygfm-gtk-4.dll usr/lib/libfm/modules/*.dll"
 libfm_gtk_devel_CONTENTS="usr/include/libfm-*/fm-gtk* usr/lib/libfm-gtk.* usr/lib/pkgconfig/libfm-gtk.pc"
-PKG_IGNORE="usr/lib/pkgconfig/libfm-gtk3.pc"
+PKG_IGNORE="usr/lib/libfm/modules/*a"
