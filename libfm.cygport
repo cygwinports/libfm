@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="libfm"
-VERSION=1.2.3
+VERSION=1.2.4
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Lightweight GTK+ file manager library"
@@ -12,6 +12,7 @@ PATCH_URI="
 	1.2.0-exeext.patch
 	1.2.0-vpath.patch
 	1.2.0-cygwin-modules.patch
+	1.2.4-cygwin-ftm.patch
 "
 
 PKG_NAMES="libfm4 libfm-bin libfm-common libfm-devel libfm-doc libfm-gtk4 libfm-gtk-devel"
